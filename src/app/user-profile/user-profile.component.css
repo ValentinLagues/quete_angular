@@ -1,0 +1,24 @@
+section{
+    height: fit-content;
+    width: fit-content;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info{
+    padding: 0.5rem;
+}
+
+.profile-field{
+    font-weight: bold;
+}
+
+.profile-button-age{
+    padding: 1rem 0;
+    background-color: lightgrey;
+}
+
+#btn{
+    margin: 0.5rem;
+}

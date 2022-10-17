@@ -1,0 +1,29 @@
+<section>
+  <div>
+    <img [src]="user.photo" [alt]="user.name" />
+  </div>
+
+  <div class="profile-info">
+    <p class="profile-field">Nom : {{ user.name }}</p>
+    <p class="profile-field">Prénom : {{ user.firstName }}</p>
+
+    <ng-container *ngIf="showAge">
+      <div>
+        <div>
+          <p class="profile-field">Age : {{ user.age }}</p>
+        </div>
+      </div>
+    </ng-container>
+
+    <div>
+      <p>{{ quote }}</p>
+      <input [(ngModel)]="quote" />
+    </div>
+  </div>
+
+  <div class="profile-button-age">
+    <button (click)="toggleAge()" id="btn">
+      {{ buttonText }}
+    </button>
+  </div>
+</section>
