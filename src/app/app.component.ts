@@ -17,11 +17,6 @@ export class AppComponent {
 
   toggleIsAdmin(){
     this.isAdmin = !this.isAdmin;
-    if(this.isAdmin){
-      this.buttonText = "Click to become normal";
-    } else {
-      this.buttonText = "Click to become admin";
-    }
   }
 
   ngOnInit(): void {
