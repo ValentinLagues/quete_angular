@@ -18,11 +18,6 @@ export class UserProfileComponent implements OnInit {
 
   toggleAge(){
     this.showAge = !this.showAge;
-    if(this.showAge){
-      this.buttonText = "Masquer mon age";
-    } else {
-      this.buttonText = "Afficher mon age";
-    }
   }
 
   ngOnInit(): void {
