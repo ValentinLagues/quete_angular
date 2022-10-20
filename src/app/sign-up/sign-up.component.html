@@ -1,0 +1,86 @@
+<h1>Inscrivez-vous sans tarder ! Places limitées !</h1>
+
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+  <fieldset>
+    <label for="userDefault.email">Email</label>
+    <input
+      [(ngModel)]="userDefault.email"
+      id="userDefault.email"
+      name="userDefault.email"
+      type="email"
+      required
+      email
+      #email="ngModel"
+    />
+  </fieldset>
+  <div *ngIf="email.errors">
+    <span *ngIf="myForm.submitted && email.errors?.['required']">
+      L'email est requis
+    </span>
+    <span *ngIf="myForm.submitted && email.errors?.['email']">
+      L'email est invalide
+    </span>
+  </div>
+
+  <fieldset>
+    <label for="userDefault.firstname">Prénom</label>
+    <input
+      [(ngModel)]="userDefault.firstname"
+      id="userDefault.firstname"
+      name="userDefault.firstname"
+      type="text"
+      required
+      minlength="3"
+      maxlength="15"
+      #firstname="ngModel"
+    />
+  </fieldset>
+  <div *ngIf="firstname.errors">
+    <span *ngIf="myForm.submitted && firstname.errors?.['required']">
+      Le prénom est requis
+    </span>
+    <span *ngIf="myForm.submitted && firstname.errors?.['minlength']"
+      >Le prénom doit comporter au moins 3 caractères
+    </span>
+    <span *ngIf="myForm.submitted && firstname.errors?.['maxlength']">
+      Le prénom ne doit pas dépasser 15 caractères
+    </span>
+  </div>
+
+  <fieldset>
+    <label for="userDefault.lastname">Nom</label>
+    <input
+      [(ngModel)]="userDefault.lastname"
+      id="userDefault.lastname"
+      name="userDefault.lastname"
+      type="text"
+      required
+      minlength="3"
+      maxlength="15"
+      #lastname="ngModel"
+    />
+  </fieldset>
+  <div *ngIf="lastname.errors">
+    <span *ngIf="myForm.submitted && lastname.errors?.['required']">
+      Le nom est requis
+    </span>
+    <span *ngIf="myForm.submitted && lastname.errors?.['minlength']">
+      Le nom doit comporter au moins 3 caractères
+    </span>
+    <span *ngIf="myForm.submitted && lastname.errors?.['maxlength']">
+      Le nom ne doit pas dépasser 15 caractères
+    </span>
+  </div>
+
+  <fieldset>
+    <label for="userDefault.password">Mot de passe</label>
+    <input
+      [(ngModel)]="userDefault.password"
+      id="userDefault.password"
+      name="userDefault.password"
+      type="password"
+    />
+  </fieldset>
+
+  <button type="submit">S'inscrire</button>
+</form>
